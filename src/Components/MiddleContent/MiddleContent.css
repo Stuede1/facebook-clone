@@ -1,0 +1,231 @@
+/* Main container */
+.middle-content-container {
+    width: 100%;
+    height: auto;
+    background-color: #edecf1;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Content wrapper */
+.content-wrapper {
+    max-width: 750px;
+    width: 100%;
+}
+
+/* Main content layout */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Stories section */
+.stories-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stories-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.stories-title {
+    font-size: 1.125rem;
+    color: #73767b;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.see-all-btn {
+    font-size: 1rem;
+    color: #1579f3;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Stories wrapper */
+.stories-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
+}
+
+.story-item {
+    max-width: 121px;
+    width: 100%;
+    max-height: 217px;
+    height: 100%;
+    position: relative;
+}
+
+.story-image {
+    max-width: 121px;
+    width: 100%;
+    min-height: 217px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+.story-name {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 0.75rem;
+    font-size: 1rem;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* Post creation section */
+.post-creation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 0.875rem;
+    border-radius: 0.5rem;
+}
+
+.post-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.profile-image {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-input-form {
+    width: 100%;
+}
+
+.post-input {
+    width: 100%;
+    height: 43px;
+    border-radius: 9999px;
+    background-color: #edecf1;
+    color: #73767d;
+    outline: none;
+    padding-left: 0.75rem;
+    border: none;
+}
+
+.post-input::placeholder {
+    color: #73767b;
+}
+
+/* Post actions */
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+    padding-top: 0.625rem;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 1.125rem;
+    color: #73767b;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Posts section */
+.posts-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.post-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 0.625rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.post-author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.post-author-image {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1579f1;
+}
+
+.post-author-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.post-author-name {
+    font-size: 1rem;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.post-time {
+    font-size: 0.875rem;
+    color: #73767b;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.post-title {
+    font-size: 1.125rem;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.post-content-image {
+    width: 100%;
+    object-fit: cover;
+}
