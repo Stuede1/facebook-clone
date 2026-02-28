@@ -5,6 +5,7 @@ import { GoHomeFill, GoVideo } from 'react-icons/go';
 import { IoMdSettings } from 'react-icons/io';
 import { LuStore } from 'react-icons/lu';
 import { PiMessengerLogoLight } from 'react-icons/pi';
+import { logout } from '../../firebase';
 import './Header.css';
 
 const links = [
@@ -14,13 +15,25 @@ const links = [
     '/profile.jpg',
     <LuStore size={'1.5rem'} />,
     <FaUsers size={'1.5rem'} />,
+    <PiMessengerLogoLight size={'1.5rem'} />,
+    <FaUsers size={'1.5rem'} />,
     <PiMessengerLogoLight size={'1.5rem'} />
-
 ]
 
 const Header = () => {
 
     const [active, setActive] = useState(0);
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const handleSignOut = () => {
+        try {
+            logout();
+            console.log('Signing out...');
+            setShowDropdown(false);
+        } catch (error) {
+            console.error('Error signing out:', error);
+        }
+    };
     return (
         <div className="header-container">
 
@@ -50,8 +63,21 @@ const Header = () => {
                 }
             </div>
 
-            <div>
-                <button className="settings-button"><IoMdSettings size={'1.5rem'} color='#73767b' /></button>
+            <div className="settings-dropdown">
+                <button 
+                    className="settings-button" 
+                    onClick={() => setShowDropdown(!showDropdown)}
+                >
+                    <IoMdSettings size={'1.5rem'} color='#73767b' />
+                </button>
+                
+                {showDropdown && (
+                    <div className="dropdown-menu">
+                        <button className="dropdown-item" onClick={handleSignOut}>
+                            Sign Out
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );
