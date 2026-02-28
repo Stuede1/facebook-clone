@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 import Header from './Components/Header/Header';
 import LeftSideBar from './Components/SideBars/LeftSideBar';
@@ -14,7 +13,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
