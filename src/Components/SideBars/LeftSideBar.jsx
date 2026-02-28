@@ -1,47 +1,59 @@
 import React from 'react';
+import profile from '../../assets/profile.jpg';
+import friends from '../../assets/friends.png';
+import saved from '../../assets/saved.png';
+import memories from '../../assets/memories.png';
+import video from '../../assets/video.png';
+import events from '../../assets/events.png';
+import marketplace from '../../assets/marketplace.png';
+import gaming_video from '../../assets/gaming_video.png';
+import support from '../../assets/support.png';
+import down_arrow from '../../assets/down_arrow.png';
+import group_1 from '../../assets/group_1.jpg';
+import group_2 from '../../assets/group_2.png';
 import './LeftSideBar.css';
 
 
 const services = [
     {
         name: 'minsara vithangage',
-        image: '/profile.jpg',
+        image: profile,
     },
     {
         name: 'friends',
-        image: '/friends.png',
+        image: friends,
     },
     {
         name: 'saved',
-        image: '/saved.png',
+        image: saved,
     },
     {
         name: 'memories',
-        image: '/memories.png',
+        image: memories,
     },
     {
         name: 'video',
-        image: '/video.png',
+        image: video,
     },
     {
         name: 'events',
-        image: '/events.png',
+        image: events,
     },
     {
         name: 'marketplace',
-        image: '/marketplace.png',
+        image: marketplace,
     },
     {
         name: 'gaming video',
-        image: '/gaming_video.png',
+        image: gaming_video,
     },
     {
         name: 'support',
-        image: '/support.png',
+        image: support,
     },
     {
         name: 'see more',
-        image: '/down_arrow.png',
+        image: down_arrow,
     },
 ];
 
@@ -71,11 +83,11 @@ const LeftSideBar = () => {
                     <div className="community-section">
                         <h4 className="section-title">your shortcuts</h4>
                         <div className="community-item">
-                            <img className="community-avatar" src={'/group_1.jpg'} alt="figma designers community" />
+                            <img className="community-avatar" src={group_1} alt="figma designers community" />
                             <h4 className="community-name">figma designers community</h4>
                         </div>
                         <div className="community-item">
-                            <img className="community-avatar" src={'/group_2.png'} alt="java q and a" />
+                            <img className="community-avatar" src={group_2} alt="java q and a" />
                             <h4 className="community-name">java q and a</h4>
                         </div>
                     </div>

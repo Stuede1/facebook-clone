@@ -1,39 +1,44 @@
 import React from 'react';
 import { FaUsers } from 'react-icons/fa';
+import contact_1 from '../../assets/contact_1.jpg';
+import contact_2 from '../../assets/contact_2.jpg';
+import contact_3 from '../../assets/contact_3.jpg';
+import contact_4 from '../../assets/contact_4.jpg';
+import groups from '../../assets/groups.jpg';
 import './RightSideBar.css';
 
 const contacts = [
     {
         name: 'Olivia johnson',
-        profile: '/contact_1.jpg'
+        profile: contact_1
     },
     {
         name: 'Emily brown',
-        profile: '/contact_2.jpg'
+        profile: contact_2
     },
     {
         name: 'sophia mortinez',
-        profile: '/contact_3.jpg'
+        profile: contact_3
     },
     {
         name: 'Jocob Harries',
-        profile: '/contact_4.jpg'
+        profile: contact_4
     },
     {
         name: 'Olivia johnson',
-        profile: '/contact_1.jpg'
+        profile: contact_1
     },
     {
         name: 'Emily brown',
-        profile: '/contact_2.jpg'
+        profile: contact_2
     },
     {
         name: 'sophia mortinez',
-        profile: '/contact_3.jpg'
+        profile: contact_3
     },
     {
         name: 'Jocob Harries',
-        profile: '/contact_4.jpg'
+        profile: contact_4
     },
 ]
 
@@ -46,7 +51,7 @@ const RightSideBar = () => {
                 <div className='suggested-section'>
                     <h4 className='suggested-title'>suggested</h4>
                     <div className='suggested-image-container'>
-                        <img className='suggested-image' src="/groups.jpg" alt="suggested" />
+                        <img className='suggested-image' src={groups} alt="suggested" />
                         <div className='suggested-overlay'>
 
                             <button className='groups-button'><span className='groups-icon'><FaUsers size={'1.5rem'} color='#73767b' /></span> groups</button>

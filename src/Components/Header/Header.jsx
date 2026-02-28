@@ -6,16 +6,16 @@ import { IoMdSettings } from 'react-icons/io';
 import { LuStore } from 'react-icons/lu';
 import { PiMessengerLogoLight } from 'react-icons/pi';
 import { logout } from '../../firebase';
+import logo_facebook from '../../assets/logo_facebook.png';
+import profile from '../../assets/profile.jpg';
 import './Header.css';
 
 const links = [
     <GoHomeFill size={'1.5rem'} />,
     <CiBellOn size={'1.5rem'} />,
     <GoVideo size={'1.5rem'} />,
-    '/profile.jpg',
+    profile,
     <LuStore size={'1.5rem'} />,
-    <FaUsers size={'1.5rem'} />,
-    <PiMessengerLogoLight size={'1.5rem'} />,
     <FaUsers size={'1.5rem'} />,
     <PiMessengerLogoLight size={'1.5rem'} />
 ]
@@ -39,7 +39,7 @@ const Header = () => {
 
             {/* logo wrapper  */}
             <div className="logo-wrapper">
-                <a href="/"><img className="logo-img" src="/logo_facebook.png" alt="facebook logo" /></a>
+                <a href="/"><img className="logo-img" src={logo_facebook} alt="facebook logo" /></a>
 
                 <form className="search-form">
                     <input className="search-input" type="text" placeholder='Search Facebook' />

@@ -2,56 +2,63 @@ import React from 'react';
 import { FcGallery } from 'react-icons/fc';
 import { GrEmoji } from 'react-icons/gr';
 import { MdVideoCall } from 'react-icons/md';
+import stories_1 from '../../assets/stories_1.jpg';
+import stories_2 from '../../assets/stories_2.jpg';
+import stories_3 from '../../assets/stories_3.jpg';
+import stories_4 from '../../assets/stories_4.jpg';
+import stories_5 from '../../assets/stories_5.jpg';
+import profile_1 from '../../assets/profile_1.jpg';
+import profile from '../../assets/profile.jpg';
+import content_1 from '../../assets/content_1.jpg';
 import './MiddleContent.css';
 
 const stories = [
     {
         name: 'albert frank',
-        story: '/stories_1.jpg',
+        story: stories_1,
     },
     {
         name: 'jenny marzia',
-        story: '/stories_2.jpg',
+        story: stories_2,
     },
     {
         name: 'maria watt',
-        story: '/stories_3.jpg',
+        story: stories_3,
     },
     {
         name: 'john carls',
-        story: '/stories_4.jpg',
+        story: stories_4,
     },
     {
         name: 'Dong',
-        story: '/stories_5.jpg',
+        story: stories_5,
     },
 ];
 
-
 const contents = [
     {
-        profile: '/profile_1.jpg',
+        profile: profile_1,
         name: 'John Snow',
-        title: 'it is coming snow',
-        content: '/content_1.jpg'
+        title: 'Winter is Coming',
+        content: content_1
     },
     {
-        profile: '/profile.jpg',
+        profile: profile,
         name: 'Dong',
-        title: 'it is coming summer',
-        content: '/content_1.jpg'
+        title: 'Summer is Coming',
+        content: content_1
     },
     {
-        profile: '/profile_1.jpg',
-        name: 'John Snow',
-        title: 'it is coming snow',
-        content: '/content_1.jpg'
+        profile: profile_1,
+        name: 'Jason',
+        title: 'Fall is Coming',
+        content: content_1
     },
     {
-        profile: '/profile.jpg',
-        name: 'Dong',
-        title: 'it is coming summer',
-        content: '/content_1.jpg'
+        profile: profile,
+        name: 'Jessica',
+        title: 'Spring is Coming',
+        content: content_1
     },
 ]
 
@@ -86,7 +93,7 @@ const MiddleContent = () => {
                     {/* middle  */}
                     <div className="post-creation">
                         <div className="post-input-wrapper">
-                            <img className='profile-image' src="/profile.jpg" alt="profile image" />
+                            <img className='profile-image' src={profile} alt="profile image" />
                             <form className='post-input-form'>
                                 <input className='post-input' type="text" placeholder='What is on your mind, Minsara?' />
                             </form>
