@@ -7,7 +7,7 @@ import stories_2 from '../../assets/stories_2.jpg';
 import stories_3 from '../../assets/stories_3.jpg';
 import stories_4 from '../../assets/stories_4.jpg';
 import stories_5 from '../../assets/stories_5.jpg';
-import profile from '../../assets/profile.jpg';
+import profile from '../../assets/profile.avif';
 import profile_1 from '../../assets/profile_1.jpg';
 import profile_2 from '../../assets/profile_2.jpg';
 import profile_3 from '../../assets/profile_3.jpg';
@@ -20,19 +20,19 @@ import './MiddleContent.css';
 
 const stories = [
     {
-        name: 'albert frank',
+        name: 'Olivia',
         story: stories_1,
     },
     {
-        name: 'jenny marzia',
+        name: 'Emily',
         story: stories_2,
     },
     {
-        name: 'maria watt',
+        name: 'Sophia',
         story: stories_3,
     },
     {
-        name: 'john carls',
+        name: 'Jacob',
         story: stories_4,
     },
     {

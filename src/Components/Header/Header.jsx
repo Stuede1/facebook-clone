@@ -7,7 +7,7 @@ import { LuStore } from 'react-icons/lu';
 import { PiMessengerLogoLight } from 'react-icons/pi';
 import { logout } from '../../firebase';
 import logo_facebook from '../../assets/logo_facebook.png';
-import profile from '../../assets/profile.jpg';
+import profile from '../../assets/profile.avif';
 import './Header.css';
 
 const links = [

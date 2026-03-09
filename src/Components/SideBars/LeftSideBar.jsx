@@ -1,5 +1,5 @@
 import React from 'react';
-import profile from '../../assets/profile.jpg';
+import profile from '../../assets/profile.avif';
 import friends from '../../assets/friends.png';
 import saved from '../../assets/saved.png';
 import memories from '../../assets/memories.png';
