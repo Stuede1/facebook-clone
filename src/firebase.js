@@ -31,6 +31,9 @@ const signup = async (name, email, password) => {
             displayName: name
         });
         
+        // Force refresh the user token to get updated profile
+        await user.reload();
+        
         await addDoc(collection(db, "users"), {
             uid: user.uid,
             name,
@@ -38,7 +41,8 @@ const signup = async (name, email, password) => {
             email,
         });
         console.log("Account created successfully!");
-        return true;
+        console.log("User profile updated with displayName:", user.displayName);
+        return { success: true, user: user };
     } catch (error) {
         console.error("Error signing up:", error);
         throw error; // Re-throw to handle in component
@@ -49,7 +53,7 @@ const login = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
         console.log("Login successful!");
-        return true;
+        return { success: true, user: auth.currentUser };
     } catch (error) {
         console.error("Error logging in:", error);
         throw error; // Re-throw to handle in component

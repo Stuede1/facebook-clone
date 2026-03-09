@@ -14,6 +14,7 @@ function App() {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      console.log('Auth state changed - User object:', currentUser);
       setUser(currentUser);
       setLoading(false);
     });
@@ -49,10 +50,10 @@ function App() {
               <Header />
               <div className="main-layout">
                 <div className="left-sidebar-section">
-                  <LeftSideBar />
+                  <LeftSideBar user={user} />
                 </div>
                 <div className="middle-content-section">
-                  <MiddleContent />
+                  <MiddleContent user={user} />
                 </div>
                 <div className="right-sidebar-section">
                   <RightSideBar />

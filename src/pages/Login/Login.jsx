@@ -11,24 +11,37 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
   const user_auth = async (event) => {
     event.preventDefault();
     setLoading(true);
     setError("");
+    setSuccess("");
     
     try {
-      let success = false;
+      let result = null;
       
       if (signState === "Sign In") {
-        success = await login(email, password);
+        result = await login(email, password);
+        if (result.success) {
+          setSuccess("Successfully signed in! Redirecting...");
+        }
       } else {
-        success = await signup(name, email, password);
+        result = await signup(name, email, password);
+        if (result.success) {
+          setSuccess("Account created successfully! Redirecting...");
+          console.log("Signup result user:", result.user);
+          console.log("User displayName:", result.user?.displayName);
+          // Add extra delay for signup to allow profile update to propagate
+          setTimeout(() => navigate("/"), 2000);
+          return;
+        }
       }
       
-      if (success) {
-        navigate("/");
+      if (result.success) {
+        setTimeout(() => navigate("/"), 1500);
       }
     } catch (error) {
       // Handle specific Firebase errors
@@ -39,19 +52,28 @@ const Login = () => {
           errorMessage = "This email is already registered. Try signing in instead.";
           break;
         case 'auth/user-not-found':
-          errorMessage = "No account found with this email. Try signing up.";
+          errorMessage = "No account found with this email. Would you like to sign up?";
           break;
         case 'auth/wrong-password':
-          errorMessage = "Incorrect password. Please try again.";
+          errorMessage = "Incorrect password. Please check your password and try again.";
+          break;
+        case 'auth/invalid-credential':
+          errorMessage = "Invalid email or password. Please check your credentials and try again.";
           break;
         case 'auth/weak-password':
-          errorMessage = "Password should be at least 6 characters.";
+          errorMessage = "Password should be at least 6 characters long.";
           break;
         case 'auth/invalid-email':
           errorMessage = "Please enter a valid email address.";
           break;
+        case 'auth/too-many-requests':
+          errorMessage = "Too many failed attempts. Please try again later.";
+          break;
+        case 'auth/network-request-failed':
+          errorMessage = "Network error. Please check your internet connection.";
+          break;
         default:
-          errorMessage = error.message || "An error occurred. Please try again.";
+          errorMessage = "Something went wrong. Please try again.";
       }
       
       setError(errorMessage);
@@ -104,6 +126,7 @@ const Login = () => {
             required
           />
           {error && <div className="error-message">{error}</div>}
+          {success && <div className="success-message">{success}</div>}
           <button type='submit' disabled={loading}>
             {loading ? "Loading..." : signState}
           </button>

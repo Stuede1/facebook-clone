@@ -111,6 +111,16 @@
     border: none;
 }
 
+.find-groups-button.disabled {
+    cursor: not-allowed;
+    opacity: 1;
+    font-weight: 700;
+}
+
+.find-groups-button.disabled:hover {
+    background-color: white;
+}
+
 .contacts-section {
     display: flex;
     flex-direction: column;

@@ -76,6 +76,26 @@
     cursor: pointer;
 }
 
+.service-item.disabled {
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.service-item.disabled .service-icon {
+    opacity: 1;
+}
+
+.service-item.disabled .service-button {
+    cursor: not-allowed;
+    opacity: 1;
+    color: #65676b;
+    font-weight: 700;
+}
+
+.service-item.disabled:hover {
+    background-color: transparent;
+}
+
 .community-section {
     display: flex;
     flex-direction: column;

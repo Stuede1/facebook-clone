@@ -13,73 +13,42 @@ import group_1 from '../../assets/group_1.jpg';
 import group_2 from '../../assets/group_2.png';
 import './LeftSideBar.css';
 
+const LeftSideBar = ({ user }) => {
+    const getDisplayName = () => {
+        if (user?.displayName) return user.displayName;
+        if (user?.email) {
+            const emailName = user.email.split('@')[0];
+            return emailName.charAt(0).toUpperCase() + emailName.slice(1);
+        }
+        return 'User';
+    };
 
-const services = [
-    {
-        name: 'minsara vithangage',
-        image: profile,
-    },
-    {
-        name: 'friends',
-        image: friends,
-    },
-    {
-        name: 'saved',
-        image: saved,
-    },
-    {
-        name: 'memories',
-        image: memories,
-    },
-    {
-        name: 'video',
-        image: video,
-    },
-    {
-        name: 'events',
-        image: events,
-    },
-    {
-        name: 'marketplace',
-        image: marketplace,
-    },
-    {
-        name: 'gaming video',
-        image: gaming_video,
-    },
-    {
-        name: 'support',
-        image: support,
-    },
-    {
-        name: 'see more',
-        image: down_arrow,
-    },
-];
+    const services = [
+        { name: getDisplayName(), image: profile },
+        { name: 'friends', image: friends, disabled: true },
+        { name: 'saved', image: saved, disabled: true },
+        { name: 'memories', image: memories, disabled: true },
+        { name: 'video', image: video, disabled: true },
+        { name: 'events', image: events, disabled: true },
+        { name: 'marketplace', image: marketplace, disabled: true },
+        { name: 'gaming video', image: gaming_video, disabled: true },
+        { name: 'support', image: support, disabled: true },
+        { name: 'see more', image: down_arrow, disabled: true },
+    ];
 
-let date = new Date();
-date = date.getFullYear();
-
-const LeftSideBar = () => {
     return (
         <div className="sidebar-container">
-
             <div className="sidebar-content">
                 <div className="sidebar-section">
-
-                    {/* services  */}
                     <div className="services-section">
-                        {
-                            services?.map((item, index) => (
-                                <div key={index} className="service-item">
-                                    <img className="service-icon" src={item?.image} alt={item?.name} />
-                                    <button className="service-button">{item?.name}</button>
-                                </div>
-                            ))
-                        }
+                        {services.map((item, index) => (
+                            <div key={index} className={`service-item ${item.disabled ? 'disabled' : ''}`}>
+                                <img className="service-icon" src={item.image} alt={item.name} />
+                                <button className="service-button" disabled={item.disabled}>{item.name}</button>
+                            </div>
+                        ))}
                     </div>
 
-                    {/* community  */}
                     <div className="community-section">
                         <h4 className="section-title">your shortcuts</h4>
                         <div className="community-item">
@@ -91,10 +60,7 @@ const LeftSideBar = () => {
                             <h4 className="community-name">java q and a</h4>
                         </div>
                     </div>
-
-
                 </div>
-
 
                 <div className="footer-text">
                     <div className="footer-links">
@@ -106,7 +72,7 @@ const LeftSideBar = () => {
                         <span className="footer-link">More</span>
                     </div>
                     <div className="footer-copyright">
-                        Meta &copy; {date}
+                        Meta &copy; {new Date().getFullYear()}
                     </div>
                 </div>
             </div>
