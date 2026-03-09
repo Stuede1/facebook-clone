@@ -69,7 +69,6 @@ const contents = [
 ]
 
 const MiddleContent = ({ user }) => {
-    const date = new Date().getFullYear();
     
     return (
         <div className='middle-content-container'>
@@ -100,7 +99,7 @@ const MiddleContent = ({ user }) => {
                         <div className="post-actions">
                             <button className='action-btn disabled' disabled><MdVideoCall size={'2rem'} color='orange' /> live video</button>
                             <button className='action-btn disabled' disabled><FcGallery size={'2rem'} color='orange' /> photo/video</button>
-                            <button className='action-btn disabled' disabled><GrEmoji size={'2rem'} color='orange' /> felling/activity</button>
+                            <button className='action-btn disabled' disabled><GrEmoji size={'2rem'} color='orange' /> feeling/activity</button>
                         </div>
                     </div>
 

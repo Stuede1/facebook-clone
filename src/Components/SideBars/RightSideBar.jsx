@@ -19,8 +19,8 @@ const RightSideBar = () => {
         { name: 'Jessica', profile: profile_4 },
         { name: 'Olivia', profile: contact_1 },
         { name: 'Emily', profile: contact_2 },
-        { name: 'sophia', profile: contact_3 },
-        { name: 'Jocob', profile: contact_4 },
+        { name: 'Sophia', profile: contact_3 },
+        { name: 'Jacob', profile: contact_4 },
     ];
 
     return (

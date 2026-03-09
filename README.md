@@ -1,5 +1,7 @@
 # React + Vite
 
+To view this project go to https://stuede1.github.io/facebook-clone/ and trust the page. Sign in using a dummy email and password to view the website. Logout and Log back in with dummy credentials to verify firebase functionality.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
